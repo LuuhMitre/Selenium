@@ -1,25 +1,31 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
     private WebDriver driver;
-
+    
+    @FindBy(linkText="Jogos Olímpicos")
+    private WebElement buttonMenuJogosOlimpicos;
+    @FindBy(linkText ="Atletas")
+    private WebElement buttonMenuAtletas;
+    
     public MainPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    private final By buttonMenuJogosOlimpicos = By.linkText("Jogos Olímpicos");
-    private final By buttonMenuAtletas = By.linkText("Atletas");
 
     public void clickMenuJogosOlimpicos(){
-        driver.findElement(buttonMenuJogosOlimpicos).click();
+        buttonMenuJogosOlimpicos.click();
     }
 
     public void clickMenuAtletas(){
-        driver.findElement(buttonMenuAtletas).click();
+        buttonMenuAtletas.click();
     }
 
 }
