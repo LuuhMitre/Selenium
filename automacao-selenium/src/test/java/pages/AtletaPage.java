@@ -32,14 +32,14 @@ public class AtletaPage {
     }
 
     public boolean validateQtdAtletas(int expectedQtd){
-        driverWaits.waitElementAparecer(imgRebecaAndrade);
+        driverWaits.waitAtletaImagemAparecer(imgRebecaAndrade);
         return listAtletas.size() == expectedQtd;
     }
 
     public void buscarAtleta(String nomeAtleta){
         buscaAtleta.sendKeys(nomeAtleta);
         buttonLupa.click();
-        driverWaits.waitElementAparecer(imgNovakDjokovic);
+        driverWaits.waitAtletaImagemAparecer(imgNovakDjokovic);
         imgNovakDjokovic.click();
     }
 
